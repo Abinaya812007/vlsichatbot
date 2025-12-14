@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliABI - VLSI Assistant</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" onclick="newChat()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    New Chat
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="chat-history-section">
+                    <div class="section-title">Today</div>
+                    <div class="chat-history-list" id="chatHistory">
+                        <div class="chat-history-item active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <span>VLSI Chat Session</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar" th:text="${#strings.substring(username, 0, 1).toUpperCase()}">U</div>
+                    <span class="user-name" th:text="${username}">User</span>
+                </div>
+                <form th:action="@{/auth/logout}" method="post" class="logout-form">
+                    <button type="submit" class="logout-btn" title="Logout">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Toggle Sidebar Button (Mobile) -->
+            <button class="toggle-sidebar" onclick="toggleSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Chat Container -->
+            <div class="chat-container" id="chatContainer">
+                <!-- Welcome Screen (shown when no messages) -->
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-logo">
+                        <div class="logo-circle">
+                            <span>AI</span>
+                        </div>
+                    </div>
+                    <h1>IntelliABI</h1>
+                    <p class="welcome-subtitle">Your VLSI Knowledge Assistant</p>
+                    
+                    <div class="suggestion-cards">
+                        <div class="suggestion-card" onclick="sendSuggestion('What is VLSI?')">
+                            <div class="card-icon">💡</div>
+                            <div class="card-text">What is VLSI?</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('Explain Moore\\'s Law')">
+                            <div class="card-icon">📊</div>
+                            <div class="card-text">Explain Moore's Law</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('Difference between ASIC and FPGA')">
+                            <div class="card-icon">🔧</div>
+                            <div class="card-text">ASIC vs FPGA</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('What is CMOS technology?')">
+                            <div class="card-icon">⚡</div>
+                            <div class="card-text">CMOS Technology</div>
+                        </div>
+                    </div>
+                    
+                    <div class="qa-count">
+                        <span>📚</span> <span th:text="${qaCount}">50</span> VLSI topics available
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+            </div>
+
+            <!-- Input Container -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <form id="chatForm" class="chat-form">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Message IntelliABI..."
+                            rows="1"
+                            autofocus></textarea>
+                        <button type="submit" id="sendBtn" class="send-btn" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <p class="disclaimer">IntelliABI provides VLSI knowledge assistance. Responses are based on stored Q&A data.</p>
+            </div>
+        </main>
+    </div>
+
+    <script th:src="@{/js/dashboard.js}"></script>
+</body>
+</html>

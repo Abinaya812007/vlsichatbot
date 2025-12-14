@@ -1,0 +1,4 @@
+This is a sample file.
+
+You can request this file from the client using:
+  get file sample.txt

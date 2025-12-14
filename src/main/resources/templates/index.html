@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliABI - VLSI Knowledge Assistant</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="welcome-page">
+        <div class="welcome-box">
+            <div class="logo-circle">
+                <span>AI</span>
+            </div>
+            <h1>IntelliABI</h1>
+            <p class="subtitle">Your Intelligent VLSI Knowledge Assistant</p>
+            
+            <div class="welcome-features">
+                <h3>What can IntelliABI do?</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span>💡</span>
+                        <span>Answer VLSI concepts and terminology questions</span>
+                    </li>
+                    <li>
+                        <span>📊</span>
+                        <span>Explain chip design principles and methodologies</span>
+                    </li>
+                    <li>
+                        <span>🔧</span>
+                        <span>Provide information about EDA tools and workflows</span>
+                    </li>
+                    <li>
+                        <span>⚡</span>
+                        <span>Discuss semiconductor technologies and trends</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="welcome-buttons">
+                <a th:href="@{/login}" class="btn btn-primary">Sign In</a>
+                <a th:href="@{/register}" class="btn btn-secondary">Create Account</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

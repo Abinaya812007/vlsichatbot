@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "question": "What does VLSI stand for?",
+      "answer": "VLSI = Very Large Scale Integration\nIt means integrating millions of transistors on a single silicon chip to make a complete circuit."
+    },
+    {
+      "question": "What is the difference between LSI, MSI, and VLSI?",
+      "answer": "SSI (Small Scale Integration) – <100 transistors\nMSI (Medium Scale Integration) – 100–1000 transistors\nLSI (Large Scale Integration) – 1000–10000 transistors\nVLSI (Very Large Scale Integration) – >10,000 transistors"
+    },
+    {
+      "question": "What are the main advantages of VLSI technology?",
+      "answer": "Reduces size of circuits\nIncreases speed of operation\nLowers power consumption\nCost-effective for mass production\nImproved reliability (less wiring → fewer faults)"
+    },
+    {
+      "question": "Who is known as the father of VLSI?",
+      "answer": "Carver Mead is considered the Father of VLSI design for his pioneering work in MOS technology and chip design methodologies."
+    },
+    {
+      "question": "What is Moore's Law?",
+      "answer": "Gordon Moore observed that the number of transistors on a chip doubles every 18–24 months, leading to higher performance and lower cost per transistor."
+    },
+    {
+      "question": "What are the major applications of VLSI?",
+      "answer": "Microprocessors & microcontrollers\nMobile phones & laptops\nMemory chips (RAM, ROM, Flash)\nDigital signal processors (DSPs)\nAutomotive and medical electronics"
+    },
+    {
+      "question": "What is the role of VLSI in modern electronics?",
+      "answer": "VLSI helps make devices smaller, faster, cheaper, and smarter.\nWithout VLSI, computers, smartphones, and IoT devices wouldn't be possible."
+    },
+    {
+      "question": "Explain the difference between ASIC and FPGA.",
+      "answer": "ASIC (Application Specific IC): Fixed for one task, faster, high cost for small quantity.\nFPGA (Field Programmable Gate Array): Reconfigurable, slower, low cost for small quantity.\nASIC is best for mass production, FPGA is best for prototyping and small batches."
+    },
+    {
+      "question": "What are the key design steps in a VLSI design flow?",
+      "answer": "1. Specification\n2. RTL Design (using Verilog/VHDL)\n3. Functional Verification\n4. Logic Synthesis\n5. Floorplanning\n6. Placement and Routing\n7. Timing Analysis\n8. Fabrication\n9. Testing"
+    },
+    {
+      "question": "What is the significance of CMOS technology in VLSI?",
+      "answer": "CMOS = Complementary MOS (NMOS + PMOS)\nIt provides low power consumption, high noise immunity, and high density.\nUsed in almost all modern ICs including processors, memory, and digital circuits."
+    },
+    {
+      "question": "What is the difference between analog and digital VLSI?",
+      "answer": "Analog VLSI: Deals with continuous signals (like amplifiers, sensors, ADCs)\nDigital VLSI: Deals with discrete 0s and 1s (like processors, memory, logic gates)"
+    },
+    {
+      "question": "What are the common design metrics in VLSI?",
+      "answer": "Area – chip size\nPower – energy consumed\nSpeed (Delay) – performance\nCost – fabrication cost\nReliability – how stable it runs"
+    },
+    {
+      "question": "What are the limitations of VLSI scaling?",
+      "answer": "Short channel effects\nLeakage currents\nHigh heat generation\nFabrication complexity\nQuantum tunneling (at nano scale)"
+    },
+    {
+      "question": "Define RTL (Register Transfer Level).",
+      "answer": "RTL is a design abstraction level where the flow of data between registers and the operations on that data are described using HDL (like Verilog or VHDL)."
+    },
+    {
+      "question": "What is SoC (System on Chip)?",
+      "answer": "A complete electronic system integrated on a single chip, including CPU, memory, I/O interfaces, and peripherals. Examples include smartphone processors like Apple A-series and Qualcomm Snapdragon."
+    },
+    {
+      "question": "What are IP cores in VLSI design?",
+      "answer": "IP Core = Intellectual Property Core\nA reusable block of logic (like UART, ADC, USB controller, etc.) used to save design time and reduce development costs."
+    },
+    {
+      "question": "What is an HDL (Hardware Description Language)?",
+      "answer": "HDL is used to describe hardware behavior and structure in code form.\nExamples: Verilog, VHDL, SystemVerilog"
+    },
+    {
+      "question": "Give examples of popular HDLs.",
+      "answer": "Verilog - Most widely used in industry\nVHDL - Common in defense and aerospace\nSystemVerilog - Extended Verilog with verification features\nChisel - Modern HDL based on Scala"
+    },
+    {
+      "question": "What is the importance of verification in VLSI design?",
+      "answer": "Verification ensures that the design works correctly before fabrication.\nIt detects bugs and logical errors early, saving millions in potential re-fabrication costs."
+    },
+    {
+      "question": "What are some popular VLSI design tools used in the industry?",
+      "answer": "Cadence (Virtuoso, Genus, Innovus)\nSynopsys (Design Compiler, PrimeTime)\nMentor Graphics (ModelSim, Calibre)\nXilinx Vivado / Intel Quartus (for FPGA design)"
+    },
+    {
+      "question": "What is a semiconductor?",
+      "answer": "A semiconductor is a material whose electrical conductivity lies between a conductor and an insulator.\nExample: Silicon (Si) and Germanium (Ge).\nIts conductivity can be controlled using impurities (doping) or temperature."
+    },
+    {
+      "question": "Explain the difference between intrinsic and extrinsic semiconductors?",
+      "answer": "Intrinsic semiconductor: Pure form with no impurities, e.g., pure silicon.\nExtrinsic semiconductor: Has impurities added (doping) to increase conductivity - either N-type or P-type."
+    },
+    {
+      "question": "What is doping in semiconductors?",
+      "answer": "Doping is the process of adding impurities to pure silicon to improve its conductivity.\nBoron doping → P-type semiconductor (creates holes)\nPhosphorus doping → N-type semiconductor (creates free electrons)"
+    },
+    {
+      "question": "What are P-type and N-type semiconductors?",
+      "answer": "P-type: Doped with trivalent impurities (Boron) → creates holes as majority carriers\nN-type: Doped with pentavalent impurities (Phosphorus) → creates electrons as majority carriers"
+    },
+    {
+      "question": "What is a PN junction?",
+      "answer": "When P-type and N-type semiconductors are joined together, a PN junction is formed.\nIt allows current to flow only in one direction (forward bias) and is the basis of diodes and transistors."
+    },
+    {
+      "question": "What is diffusion in semiconductor fabrication?",
+      "answer": "Diffusion is the process of moving dopant atoms into the silicon wafer at high temperature (800-1200°C) so that they spread evenly into the crystal lattice."
+    },
+    {
+      "question": "Explain carrier mobility.",
+      "answer": "Mobility is how easily electrons or holes move through a semiconductor when an electric field is applied.\nSymbol: μ (mu)\nUnit: cm²/V·s\nHigher mobility means faster devices."
+    },
+    {
+      "question": "What is the Fermi level?",
+      "answer": "The Fermi level is the energy level that indicates the probability of finding an electron at a particular energy.\nIn simpler terms, it shows how full or empty the electron states are at a given temperature."
+    },
+    {
+      "question": "What is a depletion region?",
+      "answer": "In a PN junction, when electrons and holes combine near the junction, a region with no free charge carriers forms — this is called the depletion region. It acts as a barrier to current flow."
+    },
+    {
+      "question": "What is avalanche breakdown?",
+      "answer": "When reverse voltage applied to a PN junction becomes very high, electrons gain enough energy to knock off other electrons through impact ionization, creating a sudden large current — this is avalanche breakdown."
+    },
+    {
+      "question": "What is the bandgap of Silicon?",
+      "answer": "The bandgap of silicon = 1.12 eV (electron volts) at room temperature.\nIt represents the energy difference between the valence band and conduction band that electrons must cross to conduct."
+    },
+    {
+      "question": "Why is Silicon used in VLSI?",
+      "answer": "Abundant and cheap\nStable oxide (SiO₂) can be formed easily for insulation\nGood semiconductor properties\nCan handle high temperatures\nWell-established fabrication processes"
+    },
+    {
+      "question": "What is the difference between Silicon and Gallium Arsenide (GaAs)?",
+      "answer": "Silicon: Cheap, moderate speed, bandgap 1.12 eV, used in general ICs\nGallium Arsenide: Expensive, faster, bandgap 1.43 eV, used in high-frequency and microwave devices, LEDs"
+    },
+    {
+      "question": "What are MOS and CMOS devices?",
+      "answer": "MOS (Metal–Oxide–Semiconductor): Basic transistor structure with gate, source, drain\nCMOS (Complementary MOS): Combination of NMOS + PMOS transistors providing low power consumption and high noise immunity"
+    },
+    {
+      "question": "What are the physical limits of miniaturization in VLSI?",
+      "answer": "Quantum effects start dominating below 5nm\nLeakage current increases exponentially\nHeat dissipation becomes critical\nFabrication precision reaches atomic limits\nShort channel effects reduce transistor control"
+    },
+    {
+      "question": "What is wafer fabrication?",
+      "answer": "Wafer fabrication is the process of creating integrated circuits (ICs) on a thin circular slice of silicon called a wafer.\nIt involves many steps like oxidation, lithography, etching, doping, and metallization."
+    },
+    {
+      "question": "What is photolithography?",
+      "answer": "Photolithography is a process of transferring patterns from a mask onto the silicon wafer using UV light.\nSteps: Coat wafer with photoresist → Expose to UV through mask → Develop image → Etch unwanted parts"
+    },
+    {
+      "question": "What is oxidation in VLSI fabrication?",
+      "answer": "Oxidation means forming a thin layer of silicon dioxide (SiO₂) on the wafer surface by exposing it to oxygen at high temperature (800-1200°C).\nIt acts as an insulator, gate dielectric, or protective layer."
+    },
+    {
+      "question": "What is ion implantation?",
+      "answer": "Ion implantation is a doping method where high-speed ions of impurities (like Boron, Phosphorus) are shot into the silicon wafer using an ion beam.\nIt gives precise control over doping level and depth."
+    },
+    {
+      "question": "What is epitaxy?",
+      "answer": "Epitaxy is the process of growing a thin crystalline layer on the wafer surface.\nIt provides a high-quality single-crystal base for device fabrication with controlled doping."
+    },
+    {
+      "question": "What is metallization?",
+      "answer": "Metallization is the process of depositing a metal layer (like aluminum or copper) on the wafer for making electrical connections between components in the IC."
+    },
+    {
+      "question": "What is chemical vapor deposition (CVD)?",
+      "answer": "In CVD, gases react at high temperature to form a solid thin film (like SiO₂ or Si₃N₄) on the wafer surface.\nUsed for insulation layers, passivation, or depositing polysilicon."
+    },
+    {
+      "question": "What is the difference between wet and dry etching?",
+      "answer": "Wet Etching: Uses liquid chemicals (like HF acid), fast but less precise, isotropic\nDry Etching: Uses plasma or reactive gases, precise and clean edges, anisotropic, better for small features"
+    },
+    {
+      "question": "What are clean room standards in fabrication?",
+      "answer": "Clean rooms are dust-free environments used for IC fabrication.\nThey have controlled air pressure, humidity, and temperature.\nClass 1 clean room has ≤1 particle per cubic foot (most stringent)."
+    },
+    {
+      "question": "What is CMP (Chemical Mechanical Polishing)?",
+      "answer": "CMP smoothens the wafer surface using chemical slurry and mechanical polishing.\nUsed after deposition or etching to make surface flat (planarization) for next layer processing."
+    },
+    {
+      "question": "What is yield in fabrication?",
+      "answer": "Yield is the percentage of good chips obtained from a wafer after fabrication.\nYield = (Good Chips / Total Chips) × 100\nHigher yield = lower cost per chip"
+    },
+    {
+      "question": "What is wafer testing?",
+      "answer": "After fabrication, each chip (die) is tested electrically using probe cards before packaging.\nChips that fail are marked with ink and discarded. Only good chips proceed to packaging."
+    },
+    {
+      "question": "Explain packaging in VLSI.",
+      "answer": "Packaging means enclosing the chip in a protective case with external pins or pads.\nIt protects the chip from damage, provides electrical connections to the circuit board, and helps with heat dissipation."
+    },
+    {
+      "question": "What is a MOSFET?",
+      "answer": "MOSFET = Metal Oxide Semiconductor Field Effect Transistor\nIt's the fundamental building block of modern ICs with three terminals: Gate, Source, Drain.\nTypes: NMOS (n-channel) and PMOS (p-channel)"
+    },
+    {
+      "question": "What is threshold voltage?",
+      "answer": "Threshold voltage (Vth) is the minimum gate-to-source voltage needed to create a conducting channel between source and drain in a MOSFET.\nTypical values: 0.3V to 0.7V for modern transistors"
+    }
+  ]
+}

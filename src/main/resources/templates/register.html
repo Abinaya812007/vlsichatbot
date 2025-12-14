@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - IntelliABI</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="logo-circle" style="width: 56px; height: 56px; font-size: 22px; margin: 0 auto 24px;">
+                <span>AI</span>
+            </div>
+            <h1>Create account</h1>
+            <p class="auth-subtitle">Sign up to start using IntelliABI</p>
+            
+            <div id="statusMessage" class="alert" style="display: none;"></div>
+            
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required autofocus minlength="3">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required minlength="4">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required minlength="4">
+                </div>
+                
+                <button type="submit" class="auth-btn">Create Account</button>
+            </form>
+            
+            <p class="auth-links">
+                Already have an account? <a th:href="@{/login}">Sign in</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const statusDiv = document.getElementById('statusMessage');
+            
+            // Validation
+            if (username.length < 3) {
+                showStatus('Username must be at least 3 characters', 'error');
+                return;
+            }
+            
+            if (password.length < 4) {
+                showStatus('Password must be at least 4 characters', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showStatus('Passwords do not match', 'error');
+                return;
+            }
+            
+            showStatus('Registering...', 'info');
+            
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password, confirmPassword })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showStatus('Registration successful! Redirecting to login...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/login?registered=true';
+                    }, 1500);
+                } else {
+                    showStatus(data.message, 'error');
+                }
+            } catch (error) {
+                showStatus('Registration failed: ' + error.message, 'error');
+            }
+        });
+        
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = message;
+            statusDiv.className = 'alert alert-' + type;
+            statusDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
